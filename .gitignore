@@ -162,6 +162,6 @@ cython_debug/
 #.idea/
 
 
-# Project Stuff
+# Project Stuffs
 # Dataset
-dataset/
+data/
