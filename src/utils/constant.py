@@ -4,7 +4,7 @@ DIR_CLEANED = DIR_DATA + "cleaned/"
 
 # Dati
 
-ITA_STATE = [
+ITA_STATE = (    
     "Liguria",
     "Lombardia",
     "Toscana",
@@ -26,4 +26,4 @@ ITA_STATE = [
     "Sardegna",
     "Umbria",
     "Italia"
-]
+)

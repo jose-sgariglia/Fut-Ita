@@ -11,13 +11,18 @@ class FeatureEngineering:
 
     def apply(self, datasets: list[pd.DataFrame]) -> list[pd.DataFrame]:
         """Applica il processo di feature engineering a una lista di DataFrame."""
+
         for i, dataset in progressbar.tqdm(enumerate(datasets), desc="Feature Engineering"):
             # Creare e unire la tabella pivot direttamente
             pivot_df = self.__create_pivot_table(dataset)
             datasets[i] = self.__merge_pivot_table(dataset, pivot_df)
 
+
+
         datasets = [dataset.drop_duplicates() for dataset in datasets]
         return datasets
+    
+    def __
 
     def __create_pivot_table(self, dataset: pd.DataFrame) -> pd.DataFrame:
         """Crea una tabella pivot per trasformare i dati in base agli intervalli di età."""

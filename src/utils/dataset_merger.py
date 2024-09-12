@@ -1,29 +1,27 @@
 import os
 import pandas as pd
 from .constant import DIR_CLEANED
+from time import time
 
 class DatasetMerger:
-    def __init__(self, output_dir: str = None, output_filename: str = "merged_dataset.parquet"):
+    def __init__(self, output_dir: str = None, output_filename: str = None):
         self.output_dir = output_dir or DIR_CLEANED
-        self.output_filename = output_filename
+        self.output_filename = output_filename or f"merged_dataset{int(time())}.parquet"
 
     def merge_datasets(self, datasets: list[pd.DataFrame]) -> pd.DataFrame:
         """Unisce una lista di DataFrame in un unico DataFrame, gestendo i tipi di dati non supportati e ordinando per anno."""
-        print("Merging datasets...")
         # Unisce i dataset
         merged_dataset = pd.concat(datasets, ignore_index=True)
-        print("Datasets merged!")
 
-        # Gestisce la conversione dei tipi di dati non supportati
+        # Converte i tipi di dati non supportati e ordina per anno
         merged_dataset = self._convert_unsupported_types(merged_dataset)
-
-        # Ordina il dataset in base all'anno
         merged_dataset = self._sort_by_year(merged_dataset)
 
         return merged_dataset
 
     def _convert_unsupported_types(self, dataset: pd.DataFrame) -> pd.DataFrame:
         """Converte i tipi di dati non supportati da Parquet in tipi supportati."""
+
         for col in dataset.columns:
             if pd.api.types.is_categorical_dtype(dataset[col]):
                 dataset[col] = dataset[col].astype(str)
@@ -35,6 +33,7 @@ class DatasetMerger:
 
     def _sort_by_year(self, dataset: pd.DataFrame) -> pd.DataFrame:
         """Ordina il DataFrame in base alla colonna TIME."""
+
         # Controlla se la colonna TIME1 è numerica; se no, la converte
         if not pd.api.types.is_numeric_dtype(dataset['TIME']):
             dataset['TIME1'] = pd.to_numeric(dataset['TIME'], errors='coerce')
@@ -45,6 +44,7 @@ class DatasetMerger:
 
     def save_to_parquet(self, dataset: pd.DataFrame):
         """Salva il DataFrame unito in un file Parquet."""
+
         if not os.path.exists(self.output_dir):
             os.makedirs(self.output_dir)  # Crea la cartella se non esiste
 
@@ -55,11 +55,27 @@ class DatasetMerger:
         except Exception as e:
             print(f"Error while saving to Parquet: {e}")
 
-    def process_and_save(self, datasets: list[pd.DataFrame]):
+    def save_to_csv(self, dataset: pd.DataFrame):
+        """Salva il DataFrame unito in un file CSV."""
+
+        if not os.path.exists(self.output_dir):
+            os.makedirs(self.output_dir)
+
+        file_path = os.path.join(self.output_dir, self.output_filename.replace(".parquet", ".csv"))
+        try:
+            dataset.to_csv(file_path, index=False)
+            print(f"Dataset saved to {file_path}!")
+        except Exception as e:
+            print(f"Error while saving to CSV: {e}")
+
+    def process_and_save(self, datasets: list[pd.DataFrame], save_to_csv: bool = False):
         """Processa i dataset e li salva in formato Parquet."""
         merged_dataset = self.merge_datasets(datasets)
         self.save_to_parquet(merged_dataset)
 
+        if save_to_csv:
+            self.save_to_csv(merged_dataset)
+        
 
 """ 
 # Esempio di utilizzo
