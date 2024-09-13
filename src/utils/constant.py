@@ -2,6 +2,9 @@ DIR_DATA = "../data/"
 DIR_RAW = DIR_DATA + "raw/"
 DIR_CLEANED = DIR_DATA + "cleaned/"
 
+DIR_CHART = "../charts/"
+DIR_BAR = DIR_CHART + "bar"
+
 # Dati
 
 ITA_STATE = (    
