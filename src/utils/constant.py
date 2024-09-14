@@ -1,9 +1,10 @@
 DIR_DATA = "../data/"
-DIR_RAW = DIR_DATA + "raw/"
-DIR_CLEANED = DIR_DATA + "cleaned/"
+DIR_RAW_DATA = DIR_DATA + "raw/"
+DIR_CLEANED_DATA = DIR_DATA + "cleaned/"
 
 DIR_CHART = "../charts/"
-DIR_BAR = DIR_CHART + "bar"
+DIR_BAR = DIR_CHART + "bar/"
+DIR_CARTESIAN = DIR_CHART + "cartesian/"
 
 # Dati
 
