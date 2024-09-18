@@ -1,14 +1,15 @@
-DIR_DATA = "../data/"
-DIR_RAW_DATA = DIR_DATA + "raw/"
-DIR_CLEANED_DATA = DIR_DATA + "cleaned/"
+PATH_DATA = "../data/"
+PATH_RAW_DATA = PATH_DATA + "raw/"
+PATH_CLEANED_DATA = PATH_DATA + "cleaned/"
+PAth_FINAL_DATA = PATH_DATA + "final/"
 
-DIR_CHART = "../charts/"
-DIR_BAR = DIR_CHART + "bar/"
-DIR_CARTESIAN = DIR_CHART + "cartesian/"
+PATH_CHART = "../charts/"
+PATH_BAR = PATH_CHART + "bar/"
+PATH_CARTESIAN = PATH_CHART + "cartesian/"
 
 # Dati
 
-ITA_STATE = {    
+ITALIAN_AREA = {    
     "Liguria": "LIG",
     "Lombardia": "LOM",
     "Toscana": "TOS",
@@ -30,4 +31,9 @@ ITA_STATE = {
     "Sardegna": "SAR",
     "Umbria": "UMB",
     "Italia": "ITA"
+}
+
+AGE_GROUP = {
+    "age_bins": [0, 10, 20, 30, 40, 50, 60, 70, 80, 100],
+    "age_labels": ["0-9", "10-19", "20-29", "30-39", "40-49", "50-59", "60-69", "70-79", "80+"]
 }
