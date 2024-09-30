@@ -86,9 +86,14 @@ ITALIAN_REGIONE_BY_CODE = {
     "VEN": "Veneto"
 }
 
-
 AGE_GROUP = {
-    "categories": [range(0, 10), range(10, 20), range(20, 30), range(30, 40), range(40, 50), range(50, 60), range(60, 70), range(70, 80), range(80, 100)],
-    "age_bins": [0, 10, 20, 30, 40, 50, 60, 70, 80, 100],
-    "age_labels": ["0-9", "10-19", "20-29", "30-39", "40-49", "50-59", "60-69", "70-79", "80+"]
+    "categories": [range(0, 5), range(5, 10), range(10, 15), range(15, 20), range(20, 25), range(25, 30), range(30, 35), range(35, 40), range(40, 45), range(45, 50), range(50, 55), range(55, 60), range(60, 65), range(65, 70), range(70, 75), range(75, 80), range(80, 85), range(85, 150)],
+    "age_bins": [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 150],
+    "age_labels": ["0-4", "5-9", "10-14", "15-19", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "65-69", "70-74", "75-79", "80-84", "85+"]
 }
+
+def get_age_group(age):
+    for i, group in enumerate(AGE_GROUP["categories"]):
+        if age in group:
+            return AGE_GROUP["age_labels"][i]
+    return None
