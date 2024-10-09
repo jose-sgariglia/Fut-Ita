@@ -1,15 +1,8 @@
-PATH_DATA = "../data/"
-PATH_RAW_DATA = PATH_DATA + "raw/"
-PATH_CLEANED_DATA = PATH_DATA + "cleaned/"
-PATH_FINAL_DATA = PATH_DATA + "final/"
+# ---------- Data constants ----------
 
-PATH_CHART = "../charts/"
-PATH_BAR = PATH_CHART + "bar/"
-PATH_CARTESIAN = PATH_CHART + "cartesian/"
-
-# Dati
-
+# Area constants
 MAPPING_REGION = {
+    "Abruzzi": "Abruzzo",
     "Abruzzo": "Abruzzo",
     "Basilicata": "Basilicata",
     "Calabria": "Calabria",
@@ -18,7 +11,9 @@ MAPPING_REGION = {
     "Emilia-romagna": "Emilia-Romagna",
     "Friuli-Venezia Giulia": "Friuli-Venezia Giulia",
     "Friuli-venezia giulia": "Friuli-Venezia Giulia",
+    "Friuli-venezia Giulia": "Friuli-Venezia Giulia",
     "Italia": "Italia",
+    "Italy": "Italia",
     "Lazio": "Lazio",
     "Liguria": "Liguria",
     "Lombardia": "Lombardia",
@@ -29,12 +24,17 @@ MAPPING_REGION = {
     "Sardegna": "Sardegna",
     "Sicilia": "Sicilia",
     "Toscana": "Toscana",
+    "Trentino-Alto Adige": "Trentino-Alto Adige/Südtirol",
+    "Trentino-alto Adige": "Trentino-Alto Adige/Südtirol",
     "Trentino-Alto Adige/SÃ¼dtirol": "Trentino-Alto Adige/Südtirol",
     "Trentino-alto adige": "Trentino-Alto Adige/Südtirol",
+    "Trentino Alto Adige / SÃ¼dtirol": "Trentino-Alto Adige/Südtirol",
     "Umbria": "Umbria",
     "Valle D'Aosta/VallÃ©e D'Aoste": "Valle D'Aosta/Vallée D'Aoste",
     "Valle d'Aosta/VallÃ©e d'Aoste": "Valle D'Aosta/Vallée D'Aoste",
+    "Valle d'Aosta / VallÃ©e d'Aoste": "Valle D'Aosta/Vallée D'Aoste",
     "Valle d'aosta": "Valle D'Aosta/Vallée D'Aoste",
+    "Valle D'aosta": "Valle D'Aosta/Vallée D'Aoste",
     "Veneto": "Veneto"
 }
 
@@ -86,6 +86,8 @@ ITALIAN_REGIONE_BY_CODE = {
     "VEN": "Veneto"
 }
 
+# Age group constants
+
 AGE_GROUP = {
     "categories": [range(0, 5), range(5, 10), range(10, 15), range(15, 20), range(20, 25), range(25, 30), range(30, 35), range(35, 40), range(40, 45), range(45, 50), range(50, 55), range(55, 60), range(60, 65), range(65, 70), range(70, 75), range(75, 80), range(80, 85), range(85, 150)],
     "age_bins": [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 150],
@@ -97,3 +99,49 @@ def get_age_group(age):
         if age in group:
             return AGE_GROUP["age_labels"][i]
     return None
+
+# ---------- Path ----------
+PROJECT_PATH =  "../products/"
+
+# ----- Data path -----
+
+RAW_DATA_DEMOGRAPHICS = PROJECT_PATH + "data/demographics/raw/"
+RAW_DATA_ECONOMICS = PROJECT_PATH + "data/economics/raw/"
+RAW_DATA_CLIMATE_CHANGE = PROJECT_PATH +  "data/climate_change/raw/"
+
+PROCESSED_DATA_DEMOGRAPHICS = PROJECT_PATH + "data/demographics/processed/"
+
+CLEANED_DATA_DEMOGRAPHICS = PROJECT_PATH + "data/demographics/cleaned/"
+CLEANED_DATA_ECONOMICS = PROJECT_PATH + "data/economics/cleaned/"
+CLEANED_DATA_CLIMATE_CHANGE = PROJECT_PATH + "data/climate_change/cleaned/"
+CLEANED_DATA_COMBINED = PROJECT_PATH + "data/combined/"
+
+# ----- Chart path -----
+
+DEMO_CHART_PATH = PROJECT_PATH + "charts/demographics/"
+DEMO_TOTAL_CHART_PATH = PROJECT_PATH + "charts/demographics/total/"
+DEMO_YEAR_CHART_PATH = PROJECT_PATH + "charts/demographics/year/"
+DEMO_GROWTH_CHART_PATH = PROJECT_PATH + "charts/demographics/growth/"
+
+ECONOMICS_CHART_PATH = PROJECT_PATH + "charts/economics/"
+ECONOMICS_ORIGINAL_CHART_PATH = PROJECT_PATH+  "charts/economics/original/"
+ECONOMICS_PREDICTION_CHART_PATH = PROJECT_PATH + "charts/economics/prediction/"
+
+CLIMATE_CHANGE_CHART_PATH = PROJECT_PATH + "charts/climate_change/"
+
+COMBINED_CHART_PATH = PROJECT_PATH + "charts/combined/"
+
+# ----- Model path -----
+MODEL_PATH = PROJECT_PATH + "models/"
+
+DEMO_MODEL_PATH = PROJECT_PATH + "models/demographics/"
+
+DEMO_LR_MODEL_PATH = PROJECT_PATH + "models/demographics/linear_regression/"
+DEMO_PR_MODEL_PATH = PROJECT_PATH + "models/demographics/polynomial_regression/"
+DEMO_RF_MODEL_PATH = PROJECT_PATH + "models/demographics/random_forest/"
+
+ECO_MODEL_PATH = PROJECT_PATH + "models/economics/"
+
+CCH_MODEL_PATH = PROJECT_PATH + "models/climate_change/"
+
+ALL_MODEL_PATH = PROJECT_PATH + "models/combined/"
