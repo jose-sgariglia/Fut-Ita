@@ -122,6 +122,7 @@ DEMO_CHART_PATH = PROJECT_PATH + "charts/demographics/"
 DEMO_TOTAL_CHART_PATH = PROJECT_PATH + "charts/demographics/total/"
 DEMO_YEAR_CHART_PATH = PROJECT_PATH + "charts/demographics/year/"
 DEMO_GROWTH_CHART_PATH = PROJECT_PATH + "charts/demographics/growth/"
+DEMO_MODEL_CHART_PATH = PROJECT_PATH + "charts/demographics/model/"
 
 ECONOMICS_CHART_PATH = PROJECT_PATH + "charts/economics/"
 ECONOMICS_ORIGINAL_CHART_PATH = PROJECT_PATH+  "charts/economics/original/"
