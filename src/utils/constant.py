@@ -122,11 +122,12 @@ DEMO_CHART_PATH = PROJECT_PATH + "charts/demographics/"
 DEMO_TOTAL_CHART_PATH = PROJECT_PATH + "charts/demographics/total/"
 DEMO_YEAR_CHART_PATH = PROJECT_PATH + "charts/demographics/year/"
 DEMO_GROWTH_CHART_PATH = PROJECT_PATH + "charts/demographics/growth/"
-DEMO_MODEL_CHART_PATH = PROJECT_PATH + "charts/demographics/model/"
+DEMO_MODEL_CHART_PATH = PROJECT_PATH + "charts/demographics/model/{code}/"
 
 ECONOMICS_CHART_PATH = PROJECT_PATH + "charts/economics/"
 ECONOMICS_ORIGINAL_CHART_PATH = PROJECT_PATH+  "charts/economics/original/"
 ECONOMICS_PREDICTION_CHART_PATH = PROJECT_PATH + "charts/economics/prediction/"
+ECONOMICS_MODEL_CHART_PATH = PROJECT_PATH + "charts/economics/model/"
 
 CLIMATE_CHANGE_CHART_PATH = PROJECT_PATH + "charts/climate_change/"
 
@@ -137,9 +138,9 @@ MODEL_PATH = PROJECT_PATH + "models/"
 
 DEMO_MODEL_PATH = PROJECT_PATH + "models/demographics/"
 
-DEMO_LR_MODEL_PATH = PROJECT_PATH + "models/demographics/linear_regression/"
-DEMO_PR_MODEL_PATH = PROJECT_PATH + "models/demographics/polynomial_regression/"
-DEMO_RF_MODEL_PATH = PROJECT_PATH + "models/demographics/random_forest/"
+DEMO_LR_MODEL_PATH = PROJECT_PATH + "models/demographics/{}/linear_regression/"
+DEMO_PR_MODEL_PATH = PROJECT_PATH + "models/demographics/{}/polynomial_regression/"
+DEMO_RF_MODEL_PATH = PROJECT_PATH + "models/demographics/{}/random_forest/"
 
 ECO_MODEL_PATH = PROJECT_PATH + "models/economics/"
 
