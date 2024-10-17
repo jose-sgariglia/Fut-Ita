@@ -130,6 +130,7 @@ ECONOMICS_PREDICTION_CHART_PATH = PROJECT_PATH + "charts/economics/prediction/"
 ECONOMICS_MODEL_CHART_PATH = PROJECT_PATH + "charts/economics/model/"
 
 CLIMATE_CHANGE_CHART_PATH = PROJECT_PATH + "charts/climate_change/"
+CLIMATE_CHANGE_MODEL_CHART_PATH = PROJECT_PATH + "charts/climate_change/model/"
 
 COMBINED_CHART_PATH = PROJECT_PATH + "charts/combined/"
 
