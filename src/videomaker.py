@@ -1,9 +1,6 @@
 import cv2
 import os
 
-import cv2
-import os
-
 def crea_video_da_immagini(cartella_immagini, nome_video, durata_immagine=0.1, fps=200):
     immagini = [img for img in os.listdir(cartella_immagini) if img.endswith((".png", ".jpg", ".jpeg"))]
     immagini.sort()
